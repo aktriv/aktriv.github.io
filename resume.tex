@@ -1,0 +1,126 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{lipsum}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[colorlinks=true, urlcolor=cyan]{hyperref}
+\usepackage{fontawesome}
+\usepackage{paracol}
+\usepackage{parskip}
+%\usepackage{etoolbox}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{Resume - Akshay Trivedi}
+\author{Akshay Trivedi}
+
+\renewcommand{\maketitle}{
+\begin{center}
+    {\Huge\bfseries \theauthor} {\huge (he/him)} \\
+    \vspace{0.5em}
+    \faPhone\enspace{}(510) 386-9255 \quad
+    \faEnvelope\enspace{}\href{mailto:aku24.7x3@gmail.com}{aku24.7x3@gmail.com} \quad
+    \faMapPin\enspace{}Fremont, CA \\
+    \faGithub\enspace{}\href{https://github.com/SnootierMoon}{@SnootierMoon} \quad
+    \faLinkedin\enspace{}\href{https://www.linkedin.com/in/akshay-trivedi21}{@akshay-trivedi21}
+\end{center}
+}
+
+\titleformat{\section}{\huge\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{\parskip}
+
+\titleformat{\subsection}{\large}{}{0em}{}
+\titlespacing{\subsection}{0pt}{5pt}{0pt}
+
+\titleformat{\subsubsection}{\bfseries}{}{0em}{}
+
+\newenvironment{experience}[4]
+{
+    \subsection{\textbf{#1}, #2\texorpdfstring{\hfill}{ }\normalsize #4}
+    \ifstrempty{#3}{}{\textit{#3}}
+    \begin{list}{}{
+        \setlength{\labelwidth}{3em}
+        \setlength{\labelsep}{0em}
+        \setlength{\itemsep}{-3pt}
+        \setlength{\leftmargin}{0.2in}
+        \setlength{\rightmargin}{0in}
+        \setlength{\itemindent}{0em}
+    }
+}
+{
+    \end{list}
+}
+
+\begin{document}
+\maketitle
+
+\columnratio{0.67}
+\begin{paracol}{2}
+
+\section{Professional Experience}
+
+    \begin{experience}{Astera Labs}{Firmware Engineer}{San Jose, CA}{Jun 2025|Present}
+    \item Developed firmware for PCIe Gen6 switches that play a significant role in Astera's rack-scale AI and compute platform. Worked at all three layers of PCIe - Transaction, Data Link, and Physical. Gained detailed knowledge of the PCIe 6.0 and PIPE 6.0 (PHY interface for PCIe) standards.
+    \end{experience}
+
+    \begin{experience}{Astera Labs}{Software Engineer Intern}{Santa Clara, CA}{May 2024|Aug 2024}
+    \item Created a toolchain for configuring ASIC firmware, and developed testing infrastructure for pre-silicon ASICs in an emulation platform. Used Jenkins, pytest, I2C.
+    \item Gained some familiarity with the PCIe 6.0 standard.
+    \end{experience}
+
+    \begin{experience}{TabaPay}{Software Engineer Intern}{Mountain View, CA}{May 2023|Aug 2023}
+    \item Designed and implemented an internal database for TabaPay employees to quickly view their clients' API configuration state. Used Golang and MySQL.
+    \item Learned how the card acceptors industry works and gained valuable experience working in a fast-paced and dynamic startup environment.
+    \end{experience}
+
+\section{Education}
+
+    \begin{experience}{University of Maryland}{B.S in CS and Math}{College Park, MD}{Aug 2022|May 2025}
+    \item Networks (CMSC711, CMSC417), OS (CMSC412), Architecture (CMSC412), Cryptography (CMSC456), Parallel Computing (CMSC416), Algorithms (CMSC451), Data Structures (CMSC420). Num. Analysis I (AMSC466), Lin. Alg. (MATH405), Combinatorics \& Graph Thy (MATH475), Axiomatic Set Thy (MATH446), Abstract Alg. (MATH403), Adv. Calc. I (MATH410), Prob. Thy (STAT410).
+    \item GPA: 4.000.
+    \end{experience}
+
+\section{Projects}
+
+    \begin{experience}{\href{https://snootiermoon.github.io/final_project_711.pdf}{Mixed Messages}}{Term Research Project}{CMSC711 Computer Networks @ UMD}{2025}
+        \item Collaborated with two undergraduate classmates on a research term project on the topic of metadata-private distributed communication protocols.
+    \end{experience}
+
+    %\begin{experience}{Math Lore Project}{Term Research Project}{}{}
+    %    \item 
+    %\end{experience}
+
+    \begin{experience}{Stannox}{Individual Hobby Project}{}{2021|Present}
+        \item A cross-platform \href{https://en.wikipedia.org/wiki/Voxel}{voxel} art editing and rendering application with a client/server architecture designed for collaborative creation. Through its many iterations, this project taught me Zig, Rust, Vulkan, OpenGL, and WebGPU.
+    \end{experience}
+
+\switchcolumn
+\section{About Me}
+
+I am a systems programmer. I believe that planning, testing, and benchmarking are critical steps in making software. I design solutions that use available hardware resources efficiently.
+
+I am drawn to systems programming because I enjoy tackling problems under constraints. In high school I used Desmos, an online graphing calculator with limited computing features, to build a UI for the game Connect 4 in which I included intelligent computer opponents. This project exemplifies the nature of challenges I aspire to solve in the future.
+
+I am a fast learner; I'm good at understanding documentation and detailed requirements to determine the best solution to a problem.
+
+I also know that I cannot solve the hardest problems on my own, and I often need to work with others to get things done. I am a team player, and I am good at asking for and giving help in a positive manner.
+
+\section{Skills}
+
+\textbf{Programming Languages}: Zig, Python, Rust, C/C++, Golang, Java.
+
+Linux-based operating systems.
+
+Graphics programming using Vulkan, \\ OpenGL, and WebGPU.
+
+PCIe 6.0 and PIPE 6.0 standards.
+
+\section{Awards}
+
+Dean's List; Fall 2022 to Spring 2025 - University of Maryland
+
+\href{https://www.cs.umd.edu/article/2025/06/four-umd-undergraduates-honored-inaugural-grant-family-award}{Grant Family Outstanding Achievement Undergraduate Student Award in Computer Science and Mathematics}; May 2025 - University of Maryland
+
+\end{paracol}
+\end{document}
